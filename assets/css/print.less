@@ -1,0 +1,73 @@
+@grey: #646464;
+@green: #4fdcb9;
+@green-text: #35c7a3;
+@dark-blue: #475261;
+@text: #5A6069;
+@soft: #dfdfdf;
+
+@gutter: 20px;
+
+body {
+  -webkit-print-color-adjust:exact;
+  background: white;
+  font-size: 14px;
+}
+
+h1, h2, h3 {
+  color: @dark-blue;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+header, section, footer {
+  padding: @gutter;
+  width: 860px;
+}
+
+header {
+  border-top: 35px solid @green;
+  h2 {
+    color: @green-text;
+  }
+}
+
+section {
+  border-color: @soft;
+  article {
+    border-color: @soft;
+  }
+}
+
+#contact a {
+  color: @green-text;
+}
+
+#skills {
+  background-image: url(/images/devops-print.png);
+  dd {
+    background: @soft !important;
+  }
+}
+
+#profile {
+  font-size: 20px;
+  .bright {
+    color: @green-text;
+  }
+  .dark {
+    color: @dark-blue;
+  }
+}
+
+
+#education {
+  background: white;
+  border: 5px solid @green;
+  h3 span {
+    color: @dark-blue;
+  }
+}
+
+footer {
+  display: none;
+}

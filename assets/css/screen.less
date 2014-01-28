@@ -1,0 +1,395 @@
+@grey: #646464;
+@light-grey: #c8cfd9;
+@green: #4fdcb9;
+@green-text: #35c7a3;
+@dark-blue: #192e3b;
+@text: #8b94a0;
+@soft: #3C4756;
+
+@gutter: 40px;
+
+@import "reset";
+
+.clear() {
+  &:after {
+    clear: both;
+    content: ".";
+    height: 0;
+    visibility: hidden;
+    display: block;
+  }
+}
+
+@font-face {
+    font-family: 'museo_slab500';
+    src: url('/fonts/Museo_Slab_500_2-webfont.eot');
+    src: url('/fonts/Museo_Slab_500_2-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Museo_Slab_500_2-webfont.woff') format('woff'),
+         url('/fonts/Museo_Slab_500_2-webfont.ttf') format('truetype'),
+         url('/fonts/Museo_Slab_500_2-webfont.svg#museo_slab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: @dark-blue;
+  color: @text;
+  font: 14px Helvetica, Arial, sans-serif;
+  padding: 0;
+  @media only screen and (max-width : 860px) {
+    font-size: 12px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: 'museo_slab500', Helvetica, sans-serif;
+  color: white;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+p {
+  padding: 7px 0;
+}
+
+header, section, footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: @gutter;
+  .clear();
+  @media only screen and (max-width : 860px) {
+    padding: 15px;
+  }
+}
+
+footer {
+
+  text-align: center;
+  a {
+    display: inline-block;
+    margin: 1em 0 3em;
+    background: white;
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.6em;
+    font-weight: 900;
+    text-transform: uppercase;
+    overflow: hidden;
+    color: @dark-blue;
+    text-decoration: none;
+    span {
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+      display: block;
+    }
+    .mail {
+      font-size: .7em;
+      background: @green;
+    }
+    &:hover span {
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+  }
+}
+
+
+header {
+  border-top: 35px solid #4fdcb9;
+  h1 {
+    margin: 0;
+    font-size: 3em;
+    @media only screen and (max-width : 860px) {
+      font-size: 2.5em;
+    }
+  }
+  h2 {
+    margin: 0;
+    color: @green-text;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  hgroup {
+    float: left;
+  }
+}
+
+#contact {
+  width: 250px;
+  padding:0;
+
+  float: right;
+  a {
+    display: block;
+    width: 200px;
+    color: @green;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @media only screen and (max-width : 860px) {
+    width: auto;
+    float: none;
+  }
+}
+
+section {
+  border-top: 1px solid @soft;
+  h2 {
+    font: inherit;
+    color: inherit;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  h3 {
+    font-size: 2.5em;
+    margin: 20px 0 10px;
+  }
+  h4, time {
+    color: @green-text;
+    margin: 2px 0 5px;
+  }
+  h4 {
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+  time {
+    font-size: .8em;
+    text-transform: uppercase;
+  }
+
+  article {
+    margin-bottom: 4em;
+
+    h3 {
+      span {
+        color: @light-grey;
+        font-size: 18px;
+        margin-left: 1em;
+      }
+    }
+
+    time {
+    }
+
+    div {
+      margin-left: 250px;
+      @media only screen and (max-width : 860px) {
+        margin: 20px 0;
+        clear: both;
+      }
+    }
+
+    ul {
+      li {
+        margin: .5em;
+        list-style: disc outside none;
+        ul {
+          margin-left: 3em;
+        }
+      }
+    }
+  }
+
+  article:last-of-type {
+    border-bottom: 0px;
+  }
+}
+
+#profile {
+  font-size: 1.6em;
+  line-height: 1.5em;
+  text-align: center;
+  .bright {
+    color: white;
+  }
+  .dark {
+    color: @green-text;
+  }
+
+}
+
+#skills {
+  background: url(/images/devops.png) center 30px no-repeat;
+  background-size: 320px 182px;
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+
+    background-image: url(/images/devops@2x.png);
+  }
+  .ops, .dev {
+    width: 220px;
+  }
+  dl {
+    dt {
+      float: left;
+      clear: left;
+      padding: 5px 10px;
+      font-size: 20px;
+      font-weight: 700;
+      width: 120px;
+    }
+    dd {
+      float: left;
+      height: 11px;
+      margin-top: 12px;
+      background: @green;
+      border-radius: 2px;
+    }
+  }
+  .dev {
+    float: left;
+    dt {
+      text-align: right;
+    }
+  }
+  .ops {
+    width: 220px;
+    float: right;
+    dt, dd {
+      float: right;
+    }
+    dt {
+      clear: right;
+    }
+    dd {
+      background: white;
+    }
+  }
+  ul {
+    padding: 20px 0 0;
+    clear: both;
+    text-align: center;
+    li {
+      display: inline-block;
+      &:before {
+        content: "/";
+        padding: 0 10px;
+      }
+      &:first-child:before {
+        content: "";
+        padding: 0;
+      }
+    }
+  }
+  @media only screen and (max-width : 860px) {
+    padding-top: 220px;
+    dt {
+      padding: 0 !important;
+    }
+    dd {
+      margin: 0 0 10px !important;
+    }
+    .dev {
+      width: 50%;
+      dt, dd {
+        float: left !important;
+        clear: left !important;
+        text-align: left!important;
+      }
+      ul {
+        text-align: left!important;
+      }
+    }
+    .ops {
+      width: 50%;
+      dt, dd {
+        float: right !important;
+        clear: right !important;
+        text-align: right!important;
+      }
+      ul {
+       text-align: right!important; 
+      }
+    }
+  }
+}
+
+#experience {
+  h4, time {
+    color: @green-text;
+    margin: 2px 0 5px;
+    width: 230px;
+    float: left;
+    clear: left;
+    @media only screen and (max-width : 860px) {
+      width: auto;
+      float: none;
+    }
+  }
+
+}
+
+#education {
+  text-align: center;
+  background: @soft;
+  color: @dark-blue;
+  h3 span {
+    display: block;
+    margin: 0;
+  }
+  article {
+    margin-bottom: 1em;
+  }
+}
+
+#other {
+  padding: 0;
+  h2 {
+    padding: @gutter @gutter 0;
+  }
+  h3 {
+    font-size: 1.8em;
+  }
+  article {
+    width: 33.333%;
+    padding: 0 10px;
+    float: left;
+    div {
+      margin: 0;
+    }
+    &.first {
+      padding-left: 0;
+    }
+    &.last {
+      padding-right: 0;
+    }
+  }
+  @media only screen and (max-width : 860px) {
+    padding: @gutter  10px;
+    h2 {
+      padding: 0;
+    }
+    article {
+      width: auto;
+      padding: 0;
+      float: none;
+      &.first {
+        padding-left: 0;
+      }
+      &.last {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// vim: ts=2 sw=2 et:
