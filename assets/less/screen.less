@@ -1,22 +1,8 @@
-@light-grey: #DAD2B5;
-@green: #7595A9;
-@green-text: #4B748D;
-@back: #DCDACE;
-@text: #7595A9;
-@soft: #385A6A;
-
-@gutter: 40px;
-
 @import "reset";
 
-.clear() {
-  &:after {
-    clear: both;
-    content: ".";
-    height: 0;
-    visibility: hidden;
-    display: block;
-  }
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 @font-face {
@@ -37,177 +23,68 @@
 }
 
 body {
-  background: @back;
-  color: @text;
+  background: #443B58;
+  color: #fff;
   font: 14px Helvetica, Arial, sans-serif;
-  padding: 0;
+  text-align: center;
   @media only screen and (max-width : 860px) {
     font-size: 12px;
   }
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'museo_slab500', Helvetica, sans-serif;
   color: white;
   font-weight: 400;
   letter-spacing: -1px;
 }
 
-p {
-  padding: 7px 0;
-}
-
-header, section, footer {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: @gutter;
-  .clear();
-  @media only screen and (max-width : 860px) {
-    padding: 15px;
-  }
-}
-
-footer {
-  //border-left: 15px solid @soft;
-  //border-right: 15px solid @soft;
-  border-bottom: 35px solid @soft;
-  text-align: center;
-  a {
-    display: inline-block;
-    margin: 1em 0 3em;
-    background: white;
-    width: 260px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 1.6em;
-    font-weight: 900;
-    text-transform: uppercase;
-    overflow: hidden;
-    color: @back;
-    text-decoration: none;
-    span {
-      -webkit-transition: all 200ms ease-in-out;
-      -moz-transition: all 200ms ease-in-out;
-      transition: all 200ms ease-in-out;
-      display: block;
-    }
-    .mail {
-      font-size: .7em;
-      background: @green;
-    }
-    &:hover span {
-      -webkit-transform: translateY(-100%);
-      -moz-transform: translateY(-100%);
-      transform: translateY(-100%);
-    }
-  }
-}
-
-
 header {
-  border-top: 35px solid @soft;
-  //border-left: 15px solid @soft;
-  //border-right: 15px solid @soft;
+  height: 200px;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
   h1 {
-    margin: 0;
-    font-size: 3em;
+    font-size: 4em;
     @media only screen and (max-width : 860px) {
       font-size: 2.5em;
     }
   }
   h2 {
     margin: 0;
-    color: @green-text;
-    font-size: 1.8em;
-  }
-  hgroup {
-    float: left;
+    color: #4ADEC2;
+    font-size: 1.4em;
   }
 }
 
-#contact {
-  width: 250px;
-  padding:0;
-
-  float: right;
+nav {
+  margin: 50px auto 0;
   a {
-    display: block;
-    width: 200px;
-    font-size: 1.1em;
-    color: @text;
-    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    width: 68px;
+    height: 68px;
+    background: #4ADEC2 url(../images/social.svg);
+    border-radius: 34px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
     &:hover {
-      text-decoration: underline;
+      background-color: #fff;
     }
   }
-  @media only screen and (max-width : 860px) {
-    width: auto;
-    float: none;
+  .github {
+    background-position: -0px 0;
+  }
+  .linkedin {
+    background-position: -68px 0;
+  }
+  .twitter {
+    background-position: -136px 0;
+  }
+  .mail {
+    background-position: -204px 0;
   }
 }
 
-section {
-  border-top: 1px solid @soft;
-  //border-left: 15px solid @soft;
-  //border-right: 15px solid @soft;
-  h2 {
-    font: inherit;
-    color: @green-text;
-    font-weight: 700;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
 
-  h3 {
-    font-size: 2.5em;
-    margin: 20px 0 10px;
-  }
-  h4, h5 {
-    margin: 2px 0 5px;
-  }
-  h4 {
-    color: @green-text;
-    font-size: 1.5em;
-    line-height: 1.2em;
-  }
-  h5 {
-    color: @text;
-    font-size: .8em;
-    text-transform: uppercase;
-  }
-
-  article {
-    margin-bottom: 4em;
-
-    h3 {
-      span {
-        color: @light-grey;
-        font-size: 18px;
-        margin-left: 1em;
-      }
-    }
-
-    h5 {
-    }
-
-    div {
-      margin-left: 250px;
-      clear: both;
-      @media only screen and (max-width : 860px) {
-        margin: 20px 0;
-        clear: both;
-      }
-    }
-
-    ul {
-      li {
-        margin: .5em;
-        list-style: disc outside none;
-        ul {
-          margin-left: 3em;
-        }
-      }
-    }
-  }
-}
